@@ -79,7 +79,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .should('be.not.checked')
   })
 
-  it.only('upload a file', () => {
+  it('upload a file', () => {
     cy.get('input[type="file"]')
       .selectFile('cypress/fixtures/example.json')
       .then(input => {
@@ -87,7 +87,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       })
   })
 
-  it.only('upload a file - drag and drop', () => {
+  it('upload a file - drag and drop', () => {
     cy.get('input[type="file"]')
       .selectFile('cypress/fixtures/example.json', { action: 'drag-drop' })
       .then(input => {
