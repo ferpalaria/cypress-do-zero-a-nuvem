@@ -117,4 +117,22 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
     cy.contains('h1', 'CAC TAT - Política de Privacidade').should('be.visible')
   })
+
+  it.only('clock - preecher os campos obrigatórios e anviar o formulário', () => {
+    cy.clock()
+
+    const longText = Cypress._.repeat('text ', 10)
+
+    cy.get('#firstName').type('Fernanda')
+    cy.get('#lastName').type('Palaria')
+    cy.get('#email').type('test@example.com')
+    cy.get('#open-text-area').type(longText, { delay: 0 })
+    cy.contains('button', 'Enviar').click()
+
+    cy.get('.success').should('be.visible')
+
+    cy.tick(3000)
+
+    cy.get('.success').should('not.be.visible')
+  })
 })
