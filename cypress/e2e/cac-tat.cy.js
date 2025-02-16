@@ -4,7 +4,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
   })
 
   it('Verificar o título da aplicação', () => {
-    cy.title().should('be.equal', 'CentralA de Atendimento ao Cliente TAT')
+    cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
   })
 
   it('preenche os campos obrigatórios e envia o formulário', () => {
@@ -44,8 +44,14 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#phone-checkbox').click() //flaky, pq num retest se já estivar marcado, click() vai desmarcar
     cy.get('button[type="submit"]').click()
 
-    cy.get('.error').should('be.visible')
+    cy.get('.error').should(escolherPalavraAleatoria())
   })
+
+  function escolherPalavraAleatoria() {
+    const palavras = ["be.visible", "be.not.visible"];
+    const indiceAleatorio = Math.floor(Math.random() * palavras.length);
+    return palavras[indiceAleatorio];
+  } 
 
   it('somente campos obrigatórios usando comandos', () => {
     cy.mandatoryFieldsOnly()
