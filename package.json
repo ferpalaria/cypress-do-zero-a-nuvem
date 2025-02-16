@@ -9,7 +9,7 @@
     "test": "cypress run",
     "test:mobile": "cypress run --config viewportWidth=375 viewportHeight=667",
     "test:cloud": "npx cypress run --record --key 564eedb5-d035-4c70-a26e-27771eb2b67b",
-    "tes:parallel":"cypress run --record --key=564eedb5-d035-4c70-a26e-27771eb2b67b --parallel"
+    "test:parallel":"cypress run --record --key=564eedb5-d035-4c70-a26e-27771eb2b67b --parallel"
   },
   "repository": {
     "type": "git",
