@@ -4,7 +4,13 @@ module.exports = defineConfig({
   viewportHeight: 880,
   viewportWidth: 1280,
   e2e: {},
-  // projectId: "fyqcdg",
+
+  // Cypress Cloud
+  projectId: "fyqcdg",
+  retries: {
+    runMode: 5,
+    openMode: 2,
+  }
 });
 
 // {
